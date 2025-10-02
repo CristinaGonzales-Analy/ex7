@@ -15,6 +15,8 @@ struct BinaryTreeNode {
 
 void inorder(BinaryTreeNode* root);
 void preorder(BinaryTreeNode* root);
+void postorder(BinaryTreeNode* root);
+
 
 
 int main() {
@@ -38,3 +40,9 @@ void preorder(BinaryTreeNode* root){
     preorder(root->right);
 }
 
+void postorder(BinaryTreeNode* root) {
+    if (root == nullptr) return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root->data << " ";
+}
